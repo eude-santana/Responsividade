@@ -1,0 +1,161 @@
+/* ---------------------
+   Estilos base - Mobile First
+---------------------- */
+:root {
+    --cor-principal: #3b82f6;
+    --cor-fundo: #f8fafc;
+    --texto-escuro: #1e293b;
+    --texto-claro: #f1f5f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--texto-escuro);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--cor-principal);
+    color: var(--texto-claro);
+    padding: 1rem 1.5rem;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--cor-principal);
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    border-radius: 8px;
+}
+
+.nav-links a {
+    color: var(--texto-claro);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    display: block;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255,255,255,0.15);
+}
+
+.menu-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Cards */
+.content {
+    padding: 2rem 1rem;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Colunas (mobile = empilhadas) */
+.columns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.col {
+    background-color: #e0f2fe;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--cor-principal);
+    color: var(--texto-claro);
+    text-align: center;
+    padding: 1rem;
+}
+
+/* ---------------------
+   Responsividade
+---------------------- */
+
+/* Telas médias - tablets */
+@media (min-width: 600px) {
+    .nav-links {
+        position: static;
+        display: flex;
+        flex-direction: row;
+    }
+    .menu-toggle {
+        display: none;
+    }
+
+    .columns {
+        flex-direction: row;
+    }
+
+    .col {
+        flex: 1;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Telas grandes - desktops */
+@media (min-width: 1024px) {
+    .content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .card {
+        margin: 0;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
